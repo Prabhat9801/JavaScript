@@ -3,10 +3,25 @@ s1.addEventListener("mouseenter",function(){
     let r = Math.floor(Math.random()*100);
     s1.innerHTML = `<h1>${r}</h1>`;
 })
+
 s1.addEventListener("mouseleave",function(){
     
     s1.innerHTML = "<h1>1</h1>"
 })
+
+s1.addEventListener("dblclick",function(){
+ 
+  let r1 = Math.floor(Math.random()*256);
+  let r2 = Math.floor(Math.random()*256);
+  let r3 = Math.floor(Math.random()*256);
+  s1.style.backgroundColor = `rgb(${r1},${r2},${r3})`;
+})
+
+s1.addEventListener("mouseleave",function(){
+    
+  s1.innerHTML = "<h1>1</h1>"
+})
+
 
 let s2 = document.getElementById("sq2");
   let clr = "green"
@@ -55,4 +70,13 @@ s4.addEventListener("mouseleave",function(){
    s2.style.backgroundColor = "white"
    s3.style.backgroundColor = "white"
    s4.style.backgroundColor = "white"
+})
+
+let main=document.getElementById("main");
+let crsr = document.getElementById("cursor");
+main.addEventListener("mousemove",function(details){
+  console.log(details.x,details.y);
+  crsr.style.left = details.x+"px";
+  crsr.style.top = details.y+"px";
+
 })
